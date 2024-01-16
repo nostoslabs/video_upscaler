@@ -13,6 +13,7 @@ torch = "^2.1.2"
 realesrgan = {git = "https://github.com/sberbank-ai/Real-ESRGAN.git"}
 torchvision = "^0.16.2"
 torchaudio = "^2.1.2"
+tqdm = "^4.66.1"
 
 [tool.poetry.scripts]
 upscale = "video_upscaler.main:main"
