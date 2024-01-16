@@ -24,9 +24,6 @@ def upscale_video(input_path: Path, output_path: Path, scale: int = 4):
     else:
         device = torch.device('cpu')
         print("Using CPU.")
-    #device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    #device = mps_device = torch.device("mps")
-    #device = torch.device('cuda' if torch.cuda.is_available() else ('mps' if torch.backends.mps.is_available() else 'cpu'))
     upscaler = RealESRGAN(device, scale)
     upscaler.load_weights('weights/RealESRGAN_x4.pth', download=True)
 
