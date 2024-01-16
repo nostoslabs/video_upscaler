@@ -1,3 +1,9 @@
+# Project Specific Ignores
+/weights
+*.mp4
+/test/data/*.avi
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

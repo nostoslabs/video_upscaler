@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "video-upscaler"
+version = "0.1.0"
+description = "Video upscaler that uses Real-ESRG and pyAV to upscale old videos."
+authors = ["Markus Kreitzer <markus.kreitzer@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+av = "^11.0.0"
+torch = "^2.1.2"
+realesrgan = {git = "https://github.com/sberbank-ai/Real-ESRGAN.git"}
+torchvision = "^0.16.2"
+torchaudio = "^2.1.2"
+
+[tool.poetry.scripts]
+upscale = "video_upscaler.main:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
