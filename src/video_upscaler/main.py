@@ -3,10 +3,10 @@ import torch
 from PIL import Image
 import numpy as np
 import av
-from RealESRGAN import RealESRGAN
 from argparse import ArgumentParser
 from pathlib import Path
 from tqdm import tqdm
+from RealESRGAN import RealESRGAN
 
 def upscale_image(image: Image, device: torch.device, weights: Path, scale: int = 4) -> Image:
     """Upscale a single image."""
@@ -23,7 +23,7 @@ def upscale_frame(frame: av.VideoFrame, upscaler: RealESRGAN) -> av.VideoFrame:
 def get_upscaler(device: torch.device, model_weights_path: Path, scale: int = 4) -> RealESRGAN:
     """Get the upscaler model."""
     upscaler = RealESRGAN(device, scale)
-    upscaler.load_weights(str(model_weights_path), download=True)
+    upscaler.load_weights(model_weights_path, download=True)
     return upscaler
 
 def upscale_video(input_path: Path, upscaler: RealESRGAN, scale: int = 4) -> None:
